@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <!-- Google Font: 'Poppins' -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome Pro 5.10.0 -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="search-box">
+        <form action>
+            <a href="" hidden></a>
+            <!-- Search Field start from here -->
+            <div class="search-area">
+                <button class="search-submit" type="button"><i class="fas fa-search"></i></button>
+                <label for="search"><i class="fas fa-caret-down"></i></label>
+                <input class="drop-btn search-field" onclick="searchDrop()" id="search" type="text" placeholder="Search"
+                    autocomplete="off">
+            </div>
+            <!-- Search Field end here -->
+
+            <!-- Search Suggestion Dropdown start from here -->
+            <div id="search_drop" class="search-suggestion drop-content">
+                <ul>
+                    <li class="investor-submit">
+                        <div class="ssg-icon"><i class="fas fa-user"></i></div>
+                        <div class="ssg-title">
+                            <span class="ssg-title-text investor">Investor</span>
+                            <span class="ssg-title-subtext">Hire professionals and agencies</span>
+                        </div>
+                    </li>
+                    <li class="entrepreneur-submit">
+                        <div class="ssg-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="ssg-title">
+                            <span class="ssg-title-text entrepreneur">Entrepreneur</span>
+                            <span class="ssg-title-subtext">Browse and buy projects</span>
+                        </div>
+                    </li>
+                    <li class="freelancer-submit">
+                        <div class="ssg-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="ssg-title">
+                            <span class="ssg-title-text freelancer">Freelancer</span>
+                            <span class="ssg-title-subtext">Apply to jobs posted by clients</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Search Suggestion Dropdown end here -->
+
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
