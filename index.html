@@ -16,14 +16,14 @@
 
 <body>
     <div class="search-box">
-        <form action>
+        <form>
             <a href="" target="_blank" hidden></a>
             <!-- Search Field start from here -->
             <div class="search-area">
                 <button class="search-submit" type="button"><i class="fas fa-search"></i></button>
                 <label for="search"><i class="fas fa-caret-down"></i></label>
                 <input class="drop-btn search-field" onclick="searchDrop()" id="search" type="text" placeholder="Search"
-                    autocomplete="off">
+                    autocomplete="off" onkeydown="return (event.keyCode!=13);"/>
             </div>
             <!-- Search Field end here -->
 
