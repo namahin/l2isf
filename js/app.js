@@ -35,18 +35,19 @@ searchBox.onkeyup = (e) => {
     let searchFieldData = e.target.value;
     let emptyArray = [];
     if (searchFieldData) {
+        let searchFieldRecycleData = searchFieldData.split(" ").join("&");
         investorSubmit.onclick = () => {
-            webLink = `https://matthewc199.sg-host.com/investor-search/?username=${searchFieldData}`;
+            webLink = `https://matthewc199.sg-host.com/investor-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
         entrepreneurSubmit.onclick = () => {
-            webLink = `https://matthewc199.sg-host.com/entrepreneur-search/?username=${searchFieldData}`;
+            webLink = `https://matthewc199.sg-host.com/entrepreneur-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
         freelancerSubmit.onclick = () => {
-            webLink = `https://matthewc199.sg-host.com/freelancer-search/?username=${searchFieldData}`;
+            webLink = `https://matthewc199.sg-host.com/freelancer-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
@@ -60,7 +61,7 @@ searchBox.onkeyup = (e) => {
         showSuggestion(emptyArray);
         let allList = investorType.querySelectorAll("div");
         for (let i = 0; i < allList.length; i++) {
-            allList[i].setAttribute("onclick", "select(this)");
+            allList[i].setAttribute("onclick", "select(this);");
         }
     } else {
 
@@ -71,17 +72,17 @@ function select(element) {
     let selectUserData = element.textContent;
     searchField.value = selectUserData;
     investorSubmit.onclick = () => {
-        webLink = `https://matthewc199.sg-host.com/investor-search/?username=${selectUserData}`;
+        webLink = `https://matthewc199.sg-host.com/investor-search/?username=${searchFieldRecycleData}`;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     }
     entrepreneurSubmit.onclick = () => {
-        webLink = `https://matthewc199.sg-host.com/entrepreneur-search/?username=${selectUserData}`;
+        webLink = `https://matthewc199.sg-host.com/entrepreneur-search/?username=${searchFieldRecycleData}`;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     }
     freelancerSubmit.onclick = () => {
-        webLink = `https://matthewc199.sg-host.com/freelancer-search/?username=${selectUserData}`;
+        webLink = `https://matthewc199.sg-host.com/freelancer-search/?username=${searchFieldRecycleData}`;
         linkTag.setAttribute("href", webLink);
         linkTag.click();
     }
