@@ -35,7 +35,7 @@ searchBox.onkeyup = (e) => {
     let searchFieldData = e.target.value;
     let emptyArray = [];
     if (searchFieldData) {
-        let searchFieldRecycleData = searchFieldData.split(" ").join("&");
+        let searchFieldRecycleData = searchFieldData.split(" ").join("+");
         investorSubmit.onclick = () => {
             webLink = `https://matthewc199.sg-host.com/investor-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
