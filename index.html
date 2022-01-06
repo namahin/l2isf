@@ -16,20 +16,21 @@
 
 <body>
     <div class="search-box">
-        <form>
-            <a href="" hidden></a>
+        <form action="" id="search_form">
+            <a href="" target="_blank" hidden></a>
             <!-- Search Field start from here -->
-            <div class="search-area">
-                <button class="search-submit" type="button"><i class="fas fa-search"></i></button>
+            <div class="search-area" tabindex="1">
+                <button class="search-submit" type="submit"><i class="fas fa-search"></i></button>
                 <label for="search"><i class="fas fa-caret-down"></i></label>
-                <input class="drop-btn search-field" onclick="searchDrop()" id="search" type="text" placeholder="Search"
-                    autocomplete="off" onkeydown="return (event.keyCode!=13);"/>
+                <input class="drop-btn search-field" onclick="searchDrop()" id="search" type="text" name="username"
+                    placeholder="Search" autocomplete="off" onkeydown="return (event.keyCode!=13);"/>
             </div>
             <!-- Search Field end here -->
 
             <!-- Search Suggestion Dropdown start from here -->
-            <div id="search_drop" class="search-suggestion drop-content">
-                <ul>
+            <label for="search" id="search_drop" class="search-suggestion drop-content">
+                <ul onclick="suggestionMarkDrop()" id="suggestion_mark">
+                    <li class="suggestion-mark active" style="display: none;"></li>
                     <li class="investor-submit">
                         <div class="ssg-icon"><i class="fas fa-user"></i></div>
                         <div class="ssg-title">
@@ -51,13 +52,40 @@
                             <span class="ssg-title-subtext">Find Freelancer</span>
                         </div>
                     </li>
+
+                    <!-- type filter-->
+
+                    <li onclick="typeInvestor()" class="suggestion-mark type-investor">
+                        <div class="ssg-icon"><i class="fas fa-user"></i></div>
+                        <div class="ssg-title">
+                            <span class="ssg-title-text type-investor-value">Investor</span>
+                            <span class="ssg-title-subtext">Find Investor</span>
+                        </div>
+                    </li>
+                    <li onclick="typeEntrepreneur()" class="suggestion-mark type-entrepreneur">
+                        <div class="ssg-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <div class="ssg-title">
+                            <span class="ssg-title-text type-entrepreneur-value">Entrepreneur</span>
+                            <span class="ssg-title-subtext">Find Entrepreneur</span>
+                        </div>
+                    </li>
+                    <li onclick="typeFreelancer()" class="suggestion-mark type-freelancer">
+                        <div class="ssg-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="ssg-title">
+                            <span class="ssg-title-text type-freelancer-value">Freelancer</span>
+                            <span class="ssg-title-subtext">Find Freelancer</span>
+                        </div>
+                    </li>
                 </ul>
 
-            </div>
+            </label>
             <!-- Search Suggestion Dropdown end here -->
 
         </form>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 

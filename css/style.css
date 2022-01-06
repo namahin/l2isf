@@ -79,8 +79,18 @@
     user-select: none;
 }
 
-.search-suggestion ul li:hover {
+
+.search-suggestion ul li:hover,
+.search-suggestion ul li.suggestion-mark.active {
     background-color: #F2F2F2;
+}
+
+.suggestion-mark-drop .suggestion-mark-remove {
+    display: none !important;
+}
+
+.suggestion-mark-drop .suggestion-mark-remove.active {
+    display: flex !important;
 }
 
 .ssg-icon {
@@ -108,4 +118,28 @@
     font-size: 13px;
     line-height: 16px;
     opacity: .8;
+}
+
+.investor-submit,
+.entrepreneur-submit,
+.freelancer-submit {
+    display: none !important;
+}
+
+.dropdown-filter .investor-submit,
+.dropdown-filter .entrepreneur-submit,
+.dropdown-filter .freelancer-submit {
+    display: flex !important;
+}
+
+.dropdown-filter .suggestion-mark-drop .investor-submit,
+.dropdown-filter .suggestion-mark-drop .entrepreneur-submit,
+.dropdown-filter .suggestion-mark-drop .freelancer-submit {
+    display: none !important;
+}
+
+.dropdown-filter .type-investor,
+.dropdown-filter .type-entrepreneur,
+.dropdown-filter .type-freelancer {
+    display: none !important;
 }

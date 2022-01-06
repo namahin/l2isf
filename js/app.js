@@ -30,8 +30,7 @@ let linkTag = searchBox.querySelector("a");
 let webLink;
 let suggestions = [];
 
-
-searchBox.onkeyup = (e) => {
+searchBox.oninput = (e) => {
     let searchFieldData = e.target.value;
     let emptyArray = [];
     if (searchFieldData) {
@@ -51,13 +50,7 @@ searchBox.onkeyup = (e) => {
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
-        emptyArray = suggestions.filter((data) => {
-            return data.toLocaleLowerCase().startsWith(searchFieldData.toLocaleLowerCase());
-        });
-        emptyArray = emptyArray.map((data) => {
-            return data = '<div>' + data + '</div>';
-        });
-        console.log(emptyArray);
+
         showSuggestion(emptyArray);
         let allList = investorType.querySelectorAll("div");
         for (let i = 0; i < allList.length; i++) {
@@ -100,4 +93,56 @@ function showSuggestion(single) {
     investorType.innerHTML = singleData;
     entrepreneurType.innerHTML = singleData;
     freelancerType.innerHTML = singleData;
+}
+
+
+
+// 
+
+$("input[name='username']").keypress(function (e) {
+    if (e.target.value.length > 0) {
+        $(".search-suggestion").addClass('dropdown-filter');
+    } else {
+        $(".search-suggestion").removeClass('dropdown-filter');
+    }
+});
+
+// 
+
+function typeInvestor() {
+    document.getElementById("search").placeholder = "Search Investor"
+    document.getElementById('search_form').action = 'https://matthewc199.sg-host.com/investor-search/';
+    document.getElementById('search').setAttribute("onkeydown", "false;");
+}
+
+function typeEntrepreneur() {
+    document.getElementById("search").placeholder = "Search Entrepreneur";
+    document.getElementById('search_form').action = 'https://matthewc199.sg-host.com/entrepreneur-search/';
+    document.getElementById('search').setAttribute("onkeydown", "false;");
+}
+
+function typeFreelancer() {
+    document.getElementById("search").placeholder = "Search Freelancer";
+    document.getElementById('search_form').action = 'https://matthewc199.sg-host.com/freelancer-search/';
+    document.getElementById('search').setAttribute("onkeydown", "false;");
+}
+
+// mouseover
+
+var header = document.getElementById("suggestion_mark");
+var btns = header.getElementsByClassName("suggestion-mark");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", " suggestion-mark-remove");
+        }
+        this.className += " active";
+    });
+}
+
+// 
+
+function suggestionMarkDrop() {
+    document.getElementById("suggestion_mark").classList.toggle("suggestion-mark-drop");
 }
