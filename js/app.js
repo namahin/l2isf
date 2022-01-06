@@ -127,6 +127,8 @@ function typeFreelancer() {
     document.getElementById('search').setAttribute("onkeydown", "false;");
 }
 
+// 
+
 // mouseover
 
 var header = document.getElementById("suggestion_mark");
