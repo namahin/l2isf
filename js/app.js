@@ -39,16 +39,19 @@ searchBox.oninput = (e) => {
             webLink = `https://matthewc199.sg-host.com/investor-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
+            document.getElementById('search_drop').setAttribute("style", "display:none;");
         }
         entrepreneurSubmit.onclick = () => {
             webLink = `https://matthewc199.sg-host.com/entrepreneur-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
+            document.getElementById('search_drop').setAttribute("style", "display:none;");
         }
         freelancerSubmit.onclick = () => {
             webLink = `https://matthewc199.sg-host.com/freelancer-search/?username=${searchFieldRecycleData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
+            document.getElementById('search_drop').setAttribute("style", "display:none;");
         }
 
         showSuggestion(emptyArray);
@@ -129,6 +132,9 @@ function typeFreelancer() {
 
 // 
 
+// function clearElement() {
+//     document.getElementById('search_drop').setAttribute("style", "display:none;");
+// }
 // mouseover
 
 var header = document.getElementById("suggestion_mark");
